@@ -14,7 +14,7 @@ class CollectionLoansController extends Controller
 
     public function getColLoans()
     {
-       $colloans = DB::table('collectionloans')->select('id','CollectionCount','LateCount', 'ExtendCount', 'LoanCount', 'ReturnCount', 'Member_id', 'Branch_id', 'LocationLibrary_id')->get();
+       $colloans = DB::table('collectionloans')->select('ID','CollectionCount','LateCount', 'ExtendCount', 'LoanCount', 'ReturnCount', 'Member_id', 'Branch_id', 'LocationLibrary_id')->get();
 
         //return view('some-view')->with('users', $users);
         return response()->json(['success' => $colloans], $this->successStatus);

@@ -14,7 +14,7 @@ class CreateCollectionLoanItemsTable extends Migration
     public function up()
     {
         Schema::create('collectionloanitems', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('ID');
             $table->string('CollectionLoan_id');
             $table->dateTime('LoanDate')->nullable();
             $table->dateTime('DueDate')->nullable();
@@ -24,9 +24,12 @@ class CreateCollectionLoanItemsTable extends Migration
             $table->double('Collection_id');
             $table->double('member_id');
             $table->bigInteger('CreateBy')->nullable();
+            $table->datetime('CreateDate')->nullable();
             $table->string('CreateTerminal', 100)->nullable();
             $table->bigInteger('UpdateBy')->nullable();
+            $table->datetime('UpdateDate')->nullalbe();
             $table->string('UpdateTerminal', 100)->nullable();
+            $table->datetime('KillLastUploadDate')->nullable();
             $table->timestamps();
         });
     }

@@ -14,7 +14,7 @@ class CollectionLoanItemsController extends Controller
 
     public function getColLoanItems()
     {
-       $colloanitems = DB::table('collectionloanitems')->select('id','CollectionLoan_id','LoanDate', 'DueDate', 'ActualReturn', 'LateDays', 'LoanStatus', 'Collection_id','member_id', 'CreateBy', 'UpdateBy')->get();
+       $colloanitems = DB::table('collectionloanitems')->select('ID','CollectionLoan_id','LoanDate', 'DueDate', 'ActualReturn', 'LateDays', 'LoanStatus', 'Collection_id','member_id', 'CreateBy', 'UpdateBy')->get();
 
         //return view('some-view')->with('users', $users);
         return response()->json(['success' => $colloanitems], $this->successStatus);

@@ -31,6 +31,10 @@ class AuthController extends Controller
             'email' => 'required|email',
             'password' => 'required',
             'c_password' => 'required|same:password',
+            // 'Fullname' => 'required',
+            
+            // 'Role_id' => 'required',
+           
         ]);
 
         if ($validator->fails()) {
@@ -41,7 +45,7 @@ class AuthController extends Controller
         $input['password'] = bcrypt($input['password']);
         $user = User::create($input);
         $success['token'] =  $user->createToken('nApp')->accessToken;
-        $success['name'] =  $user->name;
+        $success['name'] =  $user->Fullname;
 
         return response()->json(['success'=>$success], $this->successStatus);
     }

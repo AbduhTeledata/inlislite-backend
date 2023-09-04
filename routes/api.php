@@ -11,6 +11,7 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('details', 'Api\AuthController@details');
     Route::get('colloans', 'Api\CollectionLoansController@getColLoans');
     Route::get('loanitems', 'Api\CollectionLoanItemsController@getColLoanItems');
+    Route::get('history', 'Api\HistoryDataController@getHistoryData');
 });
 
 /*
